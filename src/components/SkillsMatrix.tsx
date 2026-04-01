@@ -9,50 +9,50 @@ const skillLayers: SkillLayer[] = [
     layer: 'Backend Systems',
     description: 'Core server-side engineering',
     skills: [
-      { name: 'Go', context: 'High-performance APIs, microservices' },
-      { name: 'Rust', context: 'Security-critical systems, CLI tools' },
-      { name: 'Node.js/TypeScript', context: 'Event-driven architectures' },
-      { name: 'Python', context: 'Data pipelines, automation' }
+      { name: 'Node.js & Express', context: 'Event-driven architectures, REST APIs' },
+      { name: 'C++', context: 'OOP, Custom Compilers, File I/O' },
+      { name: 'Python', context: 'Data pipelines, script execution' },
+      { name: 'WebSockets', context: 'Real-time bidirectional data flow' }
+    ]
+  },
+  {
+    layer: 'Frontend & UI',
+    description: 'Client-side applications and integrations',
+    skills: [
+      { name: 'React.js', context: 'Component-based SPAs, responsive design' },
+      { name: 'TypeScript', context: 'Type-safe frontend development' },
+      { name: 'Google Maps API', context: 'Location-based capabilities' },
+      { name: 'Polling Strategies', context: 'Real-time client synchronization' }
+    ]
+  },
+  {
+    layer: 'AI & Machine Learning',
+    description: 'Models, vision, and contextual AI',
+    skills: [
+      { name: 'TensorFlow', context: 'CNN-based deep learning classification' },
+      { name: 'OpenCV', context: 'Real-time computer vision pipelines' },
+      { name: 'RAG Systems', context: 'Transformer inference, context-aware AI' },
+      { name: 'Analytics Pipelines', context: 'Data processing and visualization' }
     ]
   },
   {
     layer: 'Data Layer',
-    description: 'Storage, caching, and querying',
+    description: 'Storage, schemas, and persistence',
     skills: [
-      { name: 'PostgreSQL', context: 'Primary relational DB, complex queries' },
-      { name: 'Redis', context: 'Caching, pub/sub, rate limiting' },
-      { name: 'MongoDB', context: 'Document storage, flexible schemas' },
-      { name: 'Apache Kafka', context: 'Event streaming, log aggregation' }
+      { name: 'MongoDB', context: 'NoSQL document storage, flexible schema' },
+      { name: 'MySQL', context: 'Relational DBs, normalized querying' },
+      { name: 'AWS DynamoDB', context: 'Highly scalable key-value storage' },
+      { name: 'File-based Data', context: 'Local CSV and TAC generation' }
     ]
   },
   {
-    layer: 'Infrastructure',
-    description: 'DevOps and cloud architecture',
+    layer: 'Infrastructure & Security',
+    description: 'DevOps, cloud, and authentication',
     skills: [
-      { name: 'Kubernetes', context: 'Container orchestration, auto-scaling' },
-      { name: 'Docker', context: 'Containerization, local dev environments' },
-      { name: 'AWS', context: 'Lambda, ECS, RDS, S3, CloudFront' },
-      { name: 'Terraform', context: 'Infrastructure as code' }
-    ]
-  },
-  {
-    layer: 'Security',
-    description: 'Authentication, encryption, compliance',
-    skills: [
-      { name: 'OAuth2/OIDC', context: 'Identity protocols, SSO integration' },
-      { name: 'JWT/JWE', context: 'Token-based auth, encryption' },
-      { name: 'TLS/mTLS', context: 'Transport security, certificate management' },
-      { name: 'OWASP', context: 'Security best practices, penetration testing' }
-    ]
-  },
-  {
-    layer: 'Observability',
-    description: 'Monitoring, logging, alerting',
-    skills: [
-      { name: 'Prometheus', context: 'Metrics collection, time-series DB' },
-      { name: 'Grafana', context: 'Dashboards, visualization' },
-      { name: 'ELK Stack', context: 'Log aggregation and search' },
-      { name: 'OpenTelemetry', context: 'Distributed tracing' }
+      { name: 'Docker', context: 'Containerization, standard environments' },
+      { name: 'AWS Lambda', context: 'Serverless compute execution' },
+      { name: 'JWT Auth', context: 'Token-based user session security' },
+      { name: 'RESTful Architecture', context: 'Structured communication interfaces' }
     ]
   }
 ];
@@ -112,19 +112,19 @@ export function SkillsMatrix() {
         <div className="border border-gray-800 bg-[#0a0a0a]/50 p-6">
           <div className="font-mono text-xs text-gray-600 mb-3">METHODOLOGY</div>
           <p className="text-sm text-gray-400">
-            Test-driven development, CI/CD pipelines, code review culture, documentation-first approach
+            Agile development, Layered system architecture, full-stack CI/CD, documentation-first approach
           </p>
         </div>
         <div className="border border-gray-800 bg-[#0a0a0a]/50 p-6">
           <div className="font-mono text-xs text-gray-600 mb-3">LEARNING</div>
           <p className="text-sm text-gray-400">
-            Currently exploring: WebAssembly, eBPF, distributed consensus algorithms
+            Currently exploring: Advanced AI/LLM architectures, deep learning optimizations, and scalable cloud deployments
           </p>
         </div>
         <div className="border border-gray-800 bg-[#0a0a0a]/50 p-6">
-          <div className="font-mono text-xs text-gray-600 mb-3">CERTIFICATIONS</div>
+          <div className="font-mono text-xs text-gray-600 mb-3">CORE FOCUS</div>
           <p className="text-sm text-gray-400">
-            AWS Solutions Architect, HEC Generative AI Certificate
+            Bridging complex backend logic, machine learning, and intuitive frontend experiences
           </p>
         </div>
       </div>

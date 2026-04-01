@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronRight, ExternalLink } from 'lucide-react';
+import { ChevronRight, ExternalLink, Github } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -12,6 +12,7 @@ interface Project {
   impact: string;
   year: string;
   link?: string;
+  github?: string;
 }
 
 const projects: Project[] = [
@@ -30,7 +31,8 @@ const projects: Project[] = [
       'Modular AI services for scalability'
     ],
     impact: 'More than 50+ active university student signups in the first phase. Improved student productivity by centralizing collaboration, enabling real-time interaction, and providing intelligent academic assistance.',
-    year: '2025'
+    year: '2025',
+    github: 'https://github.com/sumra800/FYP.git'
   },
   {
     id: 'Multi-Service Booking Platform',
@@ -86,7 +88,25 @@ const projects: Project[] = [
       'Used AWS Lambda for auto-scaling compute and DynamoDB for scalable data storage.'
     ],
     impact: 'SignSync achieved 92% accuracy in real-time gesture recognition, enabling seamless communication for deaf and hard-of-hearing individuals. The system was deployed to active users, significantly improving accessibility and inclusion.',
-    year: '2023'
+    year: '2023',
+    github: 'https://github.com/sumra800/signsync.git'
+  },
+  {
+    id: 'Employee Attendance and Leave Management System',
+    title: 'Employee Attendance and Leave Management System',
+    summary: 'A C++ based console application designed to manage employees, track their daily attendance, and process leave applications through a hierarchical approval workflow.',
+    role: 'Software Engineer',
+    stack: ['C++', 'OOP', 'File I/O'],
+    architecture: 'Object-Oriented console application utilizing polymorphic FileManager classes for local data persistence in CSV format. Implemented Role-Based Access Control logic supporting hierarchical approvals and automatic unmarked absence reconciliation.',
+    decisions: [
+      'Used Object-Oriented principles like Polymorphism and Inheritance to manage diverse user roles and behaviors.',
+      'Implemented file-based storage using polymorphic FileManager classes for persistent data keeping.',
+      'Designed a multi-tier authorization hierarchy (Supervisor, Director, Admin) for leave approvals.',
+      'Automated leave reconciliation to seamlessly handle unmarked absences by deducting available Casual Leaves.'
+    ],
+    impact: 'Provided a comprehensive CLI system capable of managing daily attendance and configurable, multi-tiered leave approvals. Maintained persistent records efficiently without the need for an external database.',
+    year: '2023',
+    github: 'https://github.com/sumra800/Employeees-attendance-and-leave-managment-system.git'
   },
   {
     id: 'Custom Compiler Implementation in C++',
@@ -159,12 +179,20 @@ export function ProjectsGrid() {
               {/* Expanded Content */}
               {isExpanded && (
                 <div className="px-8 pb-8 border-t border-gray-800">
-                  {project.link && (
-                    <div className="pt-8 -mb-4">
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-lime-400 hover:text-lime-300 font-mono text-sm border border-lime-400/30 px-4 py-2 hover:bg-lime-400/10 transition-colors">
-                        <ExternalLink className="w-4 h-4" />
-                        VIEW_LIVE_DEMO
-                      </a>
+                  {(project.link || project.github) && (
+                    <div className="pt-8 -mb-4 flex flex-wrap gap-4">
+                      {project.link && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-lime-400 hover:text-lime-300 font-mono text-sm border border-lime-400/30 px-4 py-2 hover:bg-lime-400/10 transition-colors">
+                          <ExternalLink className="w-4 h-4" />
+                          VIEW_LIVE_DEMO
+                        </a>
+                      )}
+                      {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-lime-400 hover:text-lime-300 font-mono text-sm border border-lime-400/30 px-4 py-2 hover:bg-lime-400/10 transition-colors">
+                          <Github className="w-4 h-4" />
+                          VIEW_SOURCE_CODE
+                        </a>
+                      )}
                     </div>
                   )}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-8">
