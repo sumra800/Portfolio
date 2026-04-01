@@ -124,6 +124,23 @@ const projects: Project[] = [
     ],
     impact: 'Successfully converted high-level code into executable instructions using C++ and TAC, demonstrating mastery of compiler design principles and language processing techniques.',
     year: '2023'
+  },
+  {
+    id: 'School Management System',
+    title: 'School Management System',
+    summary: 'A comprehensive web-based application designed to streamline and automate the daily administrative and academic operations of a school.',
+    role: 'Full Stack Developer',
+    stack: ['ASP.NET Web Forms', 'C#', '.NET Framework 4.7.2', 'HTML/CSS/JS', 'Bootstrap', 'jQuery'],
+    architecture: 'Robust Admin Portal utilizing ASP.NET Web Forms and a Master Page layout. Features distinct modules for class, subject, teacher, student, examination, and attendance management with an underlying local database.',
+    decisions: [
+      'Developed a comprehensive Admin Portal using ASP.NET Web Forms for robust server-side logic and page lifecycle management.',
+      'Utilized AdminMaster.Master for consistent layout and sidebar navigation across protected administrative pages.',
+      'Integrated Bootstrap 4.6.0 and jQuery for a responsive, interactive frontend experience.',
+      'Separated business logic into centralized Data Models and used the standard App_Data folder for local database management.'
+    ],
+    impact: 'Automated daily academic and administrative operations, streamlining workflows for managing classes, staff, students, and attendance. Designed as a comprehensive solution for educational usage.',
+    year: '2024',
+    github: 'https://github.com/sumra800/School-Management-System.git'
   }
 ];
 
