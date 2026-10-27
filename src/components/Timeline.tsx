@@ -2,12 +2,25 @@ interface TimelineItem {
   year: string;
   company: string;
   role: string;
-  responsibilities: string;
+  responsibilities: string | string[];
   scale: string;
   type: 'work' | 'education';
 }
 
 const timelineData: TimelineItem[] = [
+  {
+    year: 'April 2026 - Present',
+    company: 'XBot Labs',
+    role: 'Associate Software Engineer',
+    responsibilities: [
+      'Engineered 8+ backend API endpoints in Node.js and PostgreSQL, enabling core feature delivery for US-based client products within the first month of joining.',
+      'Resolved 20+ production and QA-reported bugs across a 6-person team, improving release stability and reducing regression cycle time.',
+      'Contributed to PostgreSQL schema design across 5 modules, ensuring normalized data architecture for scalable client-facing features.',
+      'Delivered full-stack features using React and Node.js in an Agile team, maintaining code quality standards through peer reviews and cross-functional collaboration.'
+    ],
+    scale: 'US-Based Client Products',
+    type: 'work'
+  },
   {
     year: '2023 - Present',
     company: 'Freelancer',
@@ -94,9 +107,26 @@ export function Timeline() {
                     </div>
                   </div>
 
-                  <p className="text-gray-400 mb-4 leading-relaxed">
-                    {item.responsibilities}
-                  </p>
+                  {Array.isArray(item.responsibilities) ? (
+                    <ul className="space-y-3 mb-4">
+                      {item.responsibilities.map((responsibility) => (
+                        <li
+                          key={responsibility}
+                          className="flex items-start gap-3 text-gray-400 leading-relaxed"
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="w-1.5 h-1.5 mt-2 bg-lime-400 rounded-full flex-shrink-0"
+                          ></span>
+                          <span>{responsibility}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-gray-400 mb-4 leading-relaxed">
+                      {item.responsibilities}
+                    </p>
+                  )}
 
                   <div className="font-mono text-xs text-gray-600">
                     SCALE: <span className="text-gray-500">{item.scale}</span>
